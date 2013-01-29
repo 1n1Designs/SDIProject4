@@ -53,23 +53,33 @@ function verifyPhoneNumber(phoneNumber){
 };
 // Function Email validation 
 
+var email = "jjj@.bsh";
+
 function emailValidation (emailInput){
 	var dot="."
 	var at="@"
 	var dotPosition = emailInput.indexOf(dot);
+	var lastDotPosition = emailInput.lastIndexOf(dot);
 	var atPosition = emailInput.indexOf(at);
-	var dotSomething = emailInput.indexOf(dot)+2;
-	
-	if (atPosition == 0 || dotPosition <= atPosition || (atPosition +2) > dotPosition || dotSomething < (emailInput.length - 2)){
-		   alert("Verify E-mail ")
-		   return false
-		} else {
-			if (emailInput.indexOf(dot)==-1 || emailInput.indexOf(dot)==0 || emailInput.indexOf(dot)==emailInput.length){
-		    alert("Verify E-mail ")
-		    return false
-			};
-		}
+	var dotSomething = emailInput.lastIndexOf(dot)+2;
+		
+	if (atPosition == 0 || atPosition ==-1 || lastDotPosition == -1 || (atPosition +1) >= lastDotPosition || dotSomething > (emailInput.length -1) || dotPosition == (atPosition - 1)){
+	    	alert("Verify E-mail \nEx. aaa@bbb.ccc ")
+	    	return false
+	};
+	return true
 };
+
+
+
+var test= emailValidation(email);
+console.log (test);
+
+
+//Main Code testing the functions. 
+
+var test= emailValidation(email);
+console.log (test);
 
 	
 	
