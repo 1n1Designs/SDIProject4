@@ -6,13 +6,11 @@
 
 // first function is. does a string follow a 123-456-7890.
 
-var phoneNumber= "123-556-1200";
-
 function verifyPhoneNumber(phoneNumber){
 	
 	if (phoneNumber.length  != 12){
 		alert ("The phone number looks to short. \nPlease verify that you are including the dashes \n Ex. 123-456-7890 Please try again");
-		return false
+		return false;
 	} else {
 		for (var i=0; i<=2; i++){
 			var validateChar=phoneNumber.charAt(i);
@@ -44,44 +42,76 @@ function verifyPhoneNumber(phoneNumber){
 			var validateChar=phoneNumber.charAt(i);
 			if(isNaN(validateChar) == true){
 				alert ("Please verify the last 4 digits section. \n" + "There is an error after the number " + phoneNumber.charAt(i-1) + "\n" + phoneNumber.charAt(i) +" Is not a valid number");
-				return false
+				return false;
 			};
 		};			
 	};
-	return true
+	alert(phoneNumber + "\nIs a valid phone number")
+	return true;
 	
 };
+
 // Function Email validation 
 
-var email = "jjj@.bsh";
-
 function emailValidation (emailInput){
-	var dot="."
-	var at="@"
+	var dot=".";
+	var at="@";
 	var dotPosition = emailInput.indexOf(dot);
 	var lastDotPosition = emailInput.lastIndexOf(dot);
 	var atPosition = emailInput.indexOf(at);
 	var dotSomething = emailInput.lastIndexOf(dot)+2;
 		
 	if (atPosition == 0 || atPosition ==-1 || lastDotPosition == -1 || (atPosition +1) >= lastDotPosition || dotSomething > (emailInput.length -1) || dotPosition == (atPosition - 1)){
-	    	alert("Verify E-mail \nEx. aaa@bbb.ccc ")
-	    	return false
+	    	alert("Verify E-mail \nEx. aaa@bbb.ccc ");
+	    	return false;
 	};
-	return true
+	return true;
 };
 
 
 
-var test= emailValidation(email);
-console.log (test);
+//String URL verify since the homework ask for validate if the string start with http:// or https:// I use that as a constant for the verification. 
+function urlValidation (enterString){
+	var http = enterString.search("http://");
+	var https= enterString.search("https://");
+	console.log(http);
+	console.log(https);
+	
+	if (http == -1){
+		if (https == -1){
+			alert(enterString + "\nIs not a valid URL addres");
+			return false;
+		} else {
+			if (https == 0){
+				alert (enterString + "\nIs a valid URL that start with https:");
+				return true;
+			};
+		
+		};		
+	} else {
+		if (http == 0){
+			alert (enterString + "\nIs a valid URL that start with http:");
+			return true;
+		};
+	};
+};
+
 
 
 //Main Code testing the functions. 
+// Phone Number testing 
+var phoneNumber = "555-777-8888";	
+var phoneTest = verifyPhoneNumber(phoneNumber);
+console.log(phoneTest)
 
-var test= emailValidation(email);
-console.log (test);
+// Email testing
+var email = "aaa@bbb.ccc";
+var emailTest= emailValidation(email);
+console.log (emailTest);
+
+// String URL testing 
+var stringTest = "https://www.hotmail.com";
+var stringTest = urlValidation(stringTest);
+console.log(stringTest);
 
 	
-	
-phone = verifyPhoneNumber(phoneNumber);
-console.log(phone)
