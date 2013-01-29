@@ -52,6 +52,25 @@ function verifyPhoneNumber(phoneNumber){
 	
 };
 // Function Email validation 
+
+function emailValidation (emailInput){
+	var dot="."
+	var at="@"
+	var dotPosition = emailInput.indexOf(dot);
+	var atPosition = emailInput.indexOf(at);
+	var dotSomething = emailInput.indexOf(dot)+2;
+	
+	if (atPosition == 0 || dotPosition <= atPosition || (atPosition +2) > dotPosition || dotSomething < (emailInput.length - 2)){
+		   alert("Verify E-mail ")
+		   return false
+		} else {
+			if (emailInput.indexOf(dot)==-1 || emailInput.indexOf(dot)==0 || emailInput.indexOf(dot)==emailInput.length){
+		    alert("Verify E-mail ")
+		    return false
+			};
+		}
+};
+
 	
 	
 phone = verifyPhoneNumber(phoneNumber);
