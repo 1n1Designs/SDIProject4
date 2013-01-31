@@ -84,6 +84,15 @@ function urlValidation (enterString){
 };
 
 
+//String Capitalization. Given the string the function will capitalize the first letter of each word. 
+
+var upString = function (string);
+var space = string.split(" ");
+for (i=0,k=string.length)
+
+
+
+
 
 //Main Code testing the functions. 
 // Phone Number testing 
