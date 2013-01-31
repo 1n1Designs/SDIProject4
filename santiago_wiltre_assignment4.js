@@ -86,9 +86,9 @@ function urlValidation (enterString){
 
 //String Capitalization. Given the string the function will capitalize the first letter of each word. 
 
-var upString = function (string);
+function (string);
 var space = string.split(" ");
-for (i=0,k=string.length)
+for (i=0, k=space.length; i,j; i++)
 
 
 
