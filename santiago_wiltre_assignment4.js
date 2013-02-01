@@ -91,12 +91,18 @@ var myLib = function(){
 
 	var stringUp = function (string){
 	var space = string.split(" ");
-	for (i=0, k=space.length; i<k ; i++){
-		var newString = space[i].replace(space[i].charAt(0)).toUpperCase();
-		newstring =  newString + " ";				
+	var joint = "";
+	for (i=0, k = space.length; i<k; i++){
+		var newString = space[i].replace(space[i].charAt(0),(space[i].charAt(0)).toUpperCase());
+		joint = joint.concat(newString + " ");				
 	};
+	return joint;
 	
 	};
+	
+// Next Function 
+
+// Next Function 
 
 	
 	//Return object below
@@ -111,13 +117,13 @@ var myLib = function(){
 
 };
 var phoneNumber= "555-666-7777";
-var email = "hi coma@li.com"
-var url = "https://www.1800-support.com"
-var phrase = "testing capital letters"
+var email = "hi coma@li.com";
+var url = "https://www.1800-support.com";
+var phrase = "testing capital letters";
 
 var myNewLib = new myLib();
 console.log ("Is this a phone number? " + myNewLib.verifyPhoneNumber(phoneNumber));
 console.log ("Is this a valid email? " + myNewLib.emailValidation(email));
 console.log ("Is this a url and what protocol use? " + myNewLib.urlValidation(url));
-console.log ("Capitalize the following phrase " + phrase + "Modify phrase is: " + myNewLib.stringUP(phrase)  )
+console.log ("Capitalize the following phrase " + phrase + " Modify phrase is: " + myNewLib.stringUp(phrase))
 
