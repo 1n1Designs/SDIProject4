@@ -125,10 +125,12 @@ var phoneNumber= "555-666-7777";
 var email = "hi coma@li.com";
 var url = "https://www.1800-support.com";
 var phrase = "testing capital letters";
+var number = 23;
 
 var myNewLib = new myLib();
 console.log ("Is this a phone number? " + myNewLib.verifyPhoneNumber(phoneNumber));
 console.log ("Is this a valid email? " + myNewLib.emailValidation(email));
 console.log ("Is this a url and what protocol use? " + myNewLib.urlValidation(url));
 console.log ("Capitalize the following phrase " + phrase + " Modify phrase is: " + myNewLib.stringUp(phrase))
+console.log ("New Number = " + myNewLib.decimal(number));
 
