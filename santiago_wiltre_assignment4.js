@@ -100,13 +100,27 @@ var myLib = function(){
 	
 	};
 	
-// Number Library 
+// Number Function to Decimal 
 
 	var decimal = function (number){
 		var formatedDecimal = number.toFixed(2)
 		return formatedDecimal
 	};
-// Next Function 
+
+// Array function value of just the numbers
+
+	var totalStr = function(array){
+	var newTotal = 0;
+	for (var i = 0, k = array.length; i < k; i++){
+		var number = isNaN(array[i]);
+		if (number == false){
+			newTotal += array[i];
+		};
+	};
+	return newTotal-1;
+	};
+		
+	
 
 	
 	//Return object below
@@ -115,9 +129,8 @@ var myLib = function(){
 		"emailValidation"   : emailValidation,
 		"urlValidation"     : urlValidation,
 		"stringUp"          : stringUp,
-		"decimal"			: decimal
-		
-		
+		"decimal"			: decimal,
+		"total"             : total
 	};
 
 };
