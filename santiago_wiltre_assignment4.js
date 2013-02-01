@@ -68,6 +68,9 @@ var myLib = function(){
 		var http = enterString.search("http://");
 		var https= enterString.search("https://");
 		var blank= enterString.indexOf(" "); 
+		if ( blank != -1){
+			return false
+		};
 		if (http == -1){
 			if (https == -1){
 				return false;
@@ -77,7 +80,7 @@ var myLib = function(){
 				};
 			};		
 		} else {
-			if (http == 0 && http > bank){
+			if (http == 0){
 				return true + " http://";
 			};
 		};
@@ -86,9 +89,14 @@ var myLib = function(){
 
 //String Capitalization. Given the string the function will capitalize the first letter of each word. 
 
-	//var stringUp = function (string);
-	//var space = string.split(" ");
-	//for (i=0, k=space.length; i,j; i++)
+	var stringUp = function (string){
+	var space = string.split(" ");
+	for (i=0, k=space.length; i<k ; i++){
+		var newString = space[i].replace(space[i].charAt(0)).toUpperCase();
+		newstring =  newString + " ";				
+	};
+	
+	};
 
 	
 	//Return object below
@@ -96,7 +104,7 @@ var myLib = function(){
 		"verifyPhoneNumber" : verifyPhoneNumber,
 		"emailValidation"   : emailValidation,
 		"urlValidation"     : urlValidation,
-		//"stringUp"          : stringUp
+		"stringUp"          : stringUp
 		
 		
 	};
@@ -105,10 +113,11 @@ var myLib = function(){
 var phoneNumber= "555-666-7777";
 var email = "hi coma@li.com"
 var url = "https://www.1800-support.com"
-
+var phrase = "testing capital letters"
 
 var myNewLib = new myLib();
 console.log ("Is this a phone number? " + myNewLib.verifyPhoneNumber(phoneNumber));
 console.log ("Is this a valid email? " + myNewLib.emailValidation(email));
 console.log ("Is this a url and what protocol use? " + myNewLib.urlValidation(url));
+console.log ("Capitalize the following phrase " + phrase + "Modify phrase is: " + myNewLib.stringUP(phrase)  )
 
