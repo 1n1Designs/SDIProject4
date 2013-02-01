@@ -103,7 +103,8 @@ var myLib = function(){
 // Number Library 
 
 	var decimal = function (number){
-		
+		var formatedDecimal = number.toFixed(2)
+		return formatedDecimal
 	};
 // Next Function 
 
@@ -113,7 +114,8 @@ var myLib = function(){
 		"verifyPhoneNumber" : verifyPhoneNumber,
 		"emailValidation"   : emailValidation,
 		"urlValidation"     : urlValidation,
-		"stringUp"          : stringUp
+		"stringUp"          : stringUp,
+		"decimal"			: decimal
 		
 		
 	};
