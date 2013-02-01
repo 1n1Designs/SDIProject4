@@ -117,7 +117,7 @@ var myLib = function(){
 			newTotal += array[i];
 		};
 	};
-	return newTotal-1;
+	return newTotal;
 	};
 		
 	
@@ -130,7 +130,7 @@ var myLib = function(){
 		"urlValidation"     : urlValidation,
 		"stringUp"          : stringUp,
 		"decimal"			: decimal,
-		"total"             : total
+		"totalStr"          : totalStr
 	};
 
 };
@@ -139,6 +139,9 @@ var email = "hi coma@li.com";
 var url = "https://www.1800-support.com";
 var phrase = "testing capital letters";
 var number = 23;
+var stringTotal = [10,"Orange",10];
+
+
 
 var myNewLib = new myLib();
 console.log ("Is this a phone number? " + myNewLib.verifyPhoneNumber(phoneNumber));
@@ -146,4 +149,5 @@ console.log ("Is this a valid email? " + myNewLib.emailValidation(email));
 console.log ("Is this a url and what protocol use? " + myNewLib.urlValidation(url));
 console.log ("Capitalize the following phrase " + phrase + " Modify phrase is: " + myNewLib.stringUp(phrase))
 console.log ("New Number = " + myNewLib.decimal(number));
+console.log ("Total value of the array is " + myNewLib.totalStr(stringTotal));
 
