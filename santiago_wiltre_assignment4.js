@@ -100,8 +100,11 @@ var myLib = function(){
 	
 	};
 	
-// Next Function 
+// Number Library 
 
+	var decimal = function (number){
+		
+	};
 // Next Function 
 
 	
